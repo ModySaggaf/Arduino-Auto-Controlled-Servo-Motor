@@ -1,0 +1,30 @@
+#include <Servo.h>
+Servo S1;
+Servo S2;
+int ServoPos = 0;
+
+void setup()
+{
+
+  S1.attach(2);
+  S2.attach(4);
+
+}
+
+void loop()
+{
+	for(ServoPos=0; ServoPos < 180; ServoPos++)  
+	{
+      S1.write(ServoPos);
+      S2.write(ServoPos);
+      delay(15);
+	}
+
+ 	for(ServoPos=180; ServoPos > 0; ServoPos--)  
+     {
+       S1.write(ServoPos);
+       S2.write(ServoPos);
+       delay(15);
+     }
+  
+}
